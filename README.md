@@ -16,6 +16,6 @@ Prototype system for analyzing social media data, identifying trends, and studyi
 
 ## Run
 
-pip install -r requirements.txt
-python run_pipeline.py
-streamlit run app/streamlit_app.py
+- pip install -r requirements.txt
+- python run_pipeline.py
+- streamlit run app/streamlit_app.py
