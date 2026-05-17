@@ -136,7 +136,7 @@ if source_mode == "Загрузить свой файл":
 
 nrows_option = st.sidebar.selectbox(
     "Размер выборки для анализа",
-    options=[str(TEST_ROWS), "20 000", "50 000", "Все строки"],
+    options=[str(TEST_ROWS), "500 000", "1 000 000", "1 500 000", "3 000 000",  "Все строки"],
     index=0,
 )
 nrows_limit = resolve_nrows(nrows_option)
@@ -282,8 +282,7 @@ with tab2:
 
         st.markdown("### Универсальная тональность")
         st.caption(
-            "Тональность считается по общему словарю позитивных и негативных слов, "
-            "без привязки к финансовой предметной области."
+            "Тональность считается по общему словарю позитивных и негативных слов"
         )
         show_table("Распределение тональности", tables.get("sentiment_distribution"), "sentiment_distribution.csv")
         show_table("Тональность по месяцам", tables.get("sentiment_by_month"), "sentiment_by_month.csv")

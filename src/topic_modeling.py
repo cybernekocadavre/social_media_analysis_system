@@ -30,7 +30,11 @@ def build_topic_tables(
     if len(working_df) < 2:
         return _empty_topic_tables()
 
-    vectorizer = TfidfVectorizer(max_features=max_features, min_df=1)
+    vectorizer = TfidfVectorizer(
+        max_features=max_features,
+        min_df=1,
+        max_df=0.85,
+    )
 
     try:
         matrix = vectorizer.fit_transform(working_df["clean_text"])

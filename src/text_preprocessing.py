@@ -28,6 +28,7 @@ def tokenize_text(text: str) -> List[str]:
         if token not in STOPWORDS
         and len(token) >= MIN_TOKEN_LENGTH
         and not token.isdigit()
+        and not any(char.isdigit() for char in token)
     ]
     return tokens
 

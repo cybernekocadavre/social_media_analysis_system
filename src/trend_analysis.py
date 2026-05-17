@@ -58,7 +58,10 @@ def get_top_tfidf_terms(df: pd.DataFrame, top_n: int = TOP_N_WORDS) -> pd.DataFr
     if not texts:
         return pd.DataFrame(columns=["term", "score"])
 
-    vectorizer = TfidfVectorizer(max_features=1000)
+    vectorizer = TfidfVectorizer(
+        max_features=1000,
+        max_df=0.85,
+    )
 
     try:
         matrix = vectorizer.fit_transform(texts)
